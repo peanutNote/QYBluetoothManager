@@ -7,15 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E278A821E1640AB00448E67 /* CharacteristicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A811E1640AB00448E67 /* CharacteristicViewController.m */; };
+		1E278A921E16413800448E67 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A881E16413800448E67 /* SVIndefiniteAnimatedView.m */; };
+		1E278A931E16413800448E67 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A8A1E16413800448E67 /* SVProgressAnimatedView.m */; };
+		1E278A941E16413800448E67 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E278A8B1E16413800448E67 /* SVProgressHUD.bundle */; };
+		1E278A951E16413800448E67 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A8D1E16413800448E67 /* SVProgressHUD.m */; };
+		1E278A961E16413800448E67 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A8F1E16413800448E67 /* SVRadialGradientLayer.m */; };
+		1E278A991E1643DC00448E67 /* QYPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A981E1643DC00448E67 /* QYPeripheralManager.m */; };
+		1E278A9C1E1650FE00448E67 /* QYPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A9B1E1650FE00448E67 /* QYPrinterManager.m */; };
+		1E278AA01E178C6800448E67 /* PrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E278A9F1E178C6800448E67 /* PrinterViewController.m */; };
 		1EA10A4B1DF7ECF30012ABDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA10A4A1DF7ECF30012ABDA /* main.m */; };
 		1EA10A4E1DF7ECF30012ABDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA10A4D1DF7ECF30012ABDA /* AppDelegate.m */; };
 		1EA10A511DF7ECF30012ABDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA10A501DF7ECF30012ABDA /* ViewController.m */; };
 		1EA10A541DF7ECF30012ABDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA10A521DF7ECF30012ABDA /* Main.storyboard */; };
 		1EA10A561DF7ECF30012ABDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA10A551DF7ECF30012ABDA /* Assets.xcassets */; };
 		1EA10A591DF7ECF30012ABDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA10A571DF7ECF30012ABDA /* LaunchScreen.storyboard */; };
+		1EA10A631DF7ED000012ABDA /* QYBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA10A621DF7ED000012ABDA /* QYBluetoothManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E278A801E1640AB00448E67 /* CharacteristicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacteristicViewController.h; sourceTree = "<group>"; };
+		1E278A811E1640AB00448E67 /* CharacteristicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacteristicViewController.m; sourceTree = "<group>"; };
+		1E278A871E16413800448E67 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		1E278A881E16413800448E67 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		1E278A891E16413800448E67 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		1E278A8A1E16413800448E67 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		1E278A8B1E16413800448E67 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		1E278A8C1E16413800448E67 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		1E278A8D1E16413800448E67 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		1E278A8E1E16413800448E67 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		1E278A8F1E16413800448E67 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		1E278A971E1643DC00448E67 /* QYPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYPeripheralManager.h; sourceTree = "<group>"; };
+		1E278A981E1643DC00448E67 /* QYPeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYPeripheralManager.m; sourceTree = "<group>"; };
+		1E278A9A1E1650FE00448E67 /* QYPrinterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYPrinterManager.h; sourceTree = "<group>"; };
+		1E278A9B1E1650FE00448E67 /* QYPrinterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYPrinterManager.m; sourceTree = "<group>"; };
+		1E278A9D1E1786C400448E67 /* QYBluetoothManager.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYBluetoothManager.pch; sourceTree = "<group>"; };
+		1E278A9E1E178C6800448E67 /* PrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterViewController.h; sourceTree = "<group>"; };
+		1E278A9F1E178C6800448E67 /* PrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterViewController.m; sourceTree = "<group>"; };
 		1EA10A461DF7ECF30012ABDA /* QYBluetoothManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QYBluetoothManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA10A4A1DF7ECF30012ABDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EA10A4C1DF7ECF30012ABDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +54,8 @@
 		1EA10A551DF7ECF30012ABDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EA10A581DF7ECF30012ABDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EA10A5A1DF7ECF30012ABDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EA10A611DF7ED000012ABDA /* QYBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBluetoothManager.h; sourceTree = "<group>"; };
+		1EA10A621DF7ED000012ABDA /* QYBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBluetoothManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,9 +69,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E278A831E16413800448E67 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1E278A861E16413800448E67 /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		1E278A861E16413800448E67 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1E278A871E16413800448E67 /* SVIndefiniteAnimatedView.h */,
+				1E278A881E16413800448E67 /* SVIndefiniteAnimatedView.m */,
+				1E278A891E16413800448E67 /* SVProgressAnimatedView.h */,
+				1E278A8A1E16413800448E67 /* SVProgressAnimatedView.m */,
+				1E278A8B1E16413800448E67 /* SVProgressHUD.bundle */,
+				1E278A8C1E16413800448E67 /* SVProgressHUD.h */,
+				1E278A8D1E16413800448E67 /* SVProgressHUD.m */,
+				1E278A8E1E16413800448E67 /* SVRadialGradientLayer.h */,
+				1E278A8F1E16413800448E67 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		1EA10A3D1DF7ECF30012ABDA = {
 			isa = PBXGroup;
 			children = (
+				1EA10A601DF7ED000012ABDA /* QYBluetooth */,
 				1EA10A481DF7ECF30012ABDA /* QYBluetoothManager */,
 				1EA10A471DF7ECF30012ABDA /* Products */,
 			);
@@ -62,6 +117,10 @@
 				1EA10A4D1DF7ECF30012ABDA /* AppDelegate.m */,
 				1EA10A4F1DF7ECF30012ABDA /* ViewController.h */,
 				1EA10A501DF7ECF30012ABDA /* ViewController.m */,
+				1E278A801E1640AB00448E67 /* CharacteristicViewController.h */,
+				1E278A811E1640AB00448E67 /* CharacteristicViewController.m */,
+				1E278A9E1E178C6800448E67 /* PrinterViewController.h */,
+				1E278A9F1E178C6800448E67 /* PrinterViewController.m */,
 				1EA10A521DF7ECF30012ABDA /* Main.storyboard */,
 				1EA10A551DF7ECF30012ABDA /* Assets.xcassets */,
 				1EA10A571DF7ECF30012ABDA /* LaunchScreen.storyboard */,
@@ -74,9 +133,24 @@
 		1EA10A491DF7ECF30012ABDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1E278A831E16413800448E67 /* SVProgressHUD */,
 				1EA10A4A1DF7ECF30012ABDA /* main.m */,
+				1E278A9D1E1786C400448E67 /* QYBluetoothManager.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EA10A601DF7ED000012ABDA /* QYBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				1EA10A611DF7ED000012ABDA /* QYBluetoothManager.h */,
+				1EA10A621DF7ED000012ABDA /* QYBluetoothManager.m */,
+				1E278A971E1643DC00448E67 /* QYPeripheralManager.h */,
+				1E278A981E1643DC00448E67 /* QYPeripheralManager.m */,
+				1E278A9A1E1650FE00448E67 /* QYPrinterManager.h */,
+				1E278A9B1E1650FE00448E67 /* QYPrinterManager.m */,
+			);
+			path = QYBluetooth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,12 +179,13 @@
 		1EA10A3E1DF7ECF30012ABDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = qianye;
 				TargetAttributes = {
 					1EA10A451DF7ECF30012ABDA = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = U27UCT3Q2J;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -137,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E278A941E16413800448E67 /* SVProgressHUD.bundle in Resources */,
 				1EA10A591DF7ECF30012ABDA /* LaunchScreen.storyboard in Resources */,
 				1EA10A561DF7ECF30012ABDA /* Assets.xcassets in Resources */,
 				1EA10A541DF7ECF30012ABDA /* Main.storyboard in Resources */,
@@ -150,9 +226,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E278A991E1643DC00448E67 /* QYPeripheralManager.m in Sources */,
+				1E278A821E1640AB00448E67 /* CharacteristicViewController.m in Sources */,
 				1EA10A511DF7ECF30012ABDA /* ViewController.m in Sources */,
 				1EA10A4E1DF7ECF30012ABDA /* AppDelegate.m in Sources */,
+				1EA10A631DF7ED000012ABDA /* QYBluetoothManager.m in Sources */,
+				1E278AA01E178C6800448E67 /* PrinterViewController.m in Sources */,
+				1E278A951E16413800448E67 /* SVProgressHUD.m in Sources */,
+				1E278A9C1E1650FE00448E67 /* QYPrinterManager.m in Sources */,
+				1E278A921E16413800448E67 /* SVIndefiniteAnimatedView.m in Sources */,
 				1EA10A4B1DF7ECF30012ABDA /* main.m in Sources */,
+				1E278A931E16413800448E67 /* SVProgressAnimatedView.m in Sources */,
+				1E278A961E16413800448E67 /* SVRadialGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +281,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -243,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -270,10 +357,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U27UCT3Q2J;
+				GCC_PREFIX_HEADER = QYBluetoothManager/QYBluetoothManager.pch;
 				INFOPLIST_FILE = QYBluetoothManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianye.QYBluetoothManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0f07ca32-b8dd-4b5f-893e-0635e3495efe";
+				PROVISIONING_PROFILE_SPECIFIER = qianyeDemo;
 			};
 			name = Debug;
 		};
@@ -281,7 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = QYBluetoothManager/QYBluetoothManager.pch;
 				INFOPLIST_FILE = QYBluetoothManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianye.QYBluetoothManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +402,7 @@
 				1EA10A5F1DF7ECF30012ABDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
