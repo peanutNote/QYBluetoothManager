@@ -23,6 +23,8 @@
 		1EA10A561DF7ECF30012ABDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA10A551DF7ECF30012ABDA /* Assets.xcassets */; };
 		1EA10A591DF7ECF30012ABDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA10A571DF7ECF30012ABDA /* LaunchScreen.storyboard */; };
 		1EA10A631DF7ED000012ABDA /* QYBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA10A621DF7ED000012ABDA /* QYBluetoothManager.m */; };
+		1EC525A71E1CC3A00028DA1F /* QYThermalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC525A61E1CC3A00028DA1F /* QYThermalSupport.m */; };
+		1EC525AA1E1CEC3F0028DA1F /* MMQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC525A91E1CEC3F0028DA1F /* MMQRCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		1EA10A5A1DF7ECF30012ABDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EA10A611DF7ED000012ABDA /* QYBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBluetoothManager.h; sourceTree = "<group>"; };
 		1EA10A621DF7ED000012ABDA /* QYBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBluetoothManager.m; sourceTree = "<group>"; };
+		1EC525A51E1CC3A00028DA1F /* QYThermalSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYThermalSupport.h; sourceTree = "<group>"; };
+		1EC525A61E1CC3A00028DA1F /* QYThermalSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYThermalSupport.m; sourceTree = "<group>"; };
+		1EC525A81E1CEC3F0028DA1F /* MMQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMQRCode.h; sourceTree = "<group>"; };
+		1EC525A91E1CEC3F0028DA1F /* MMQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMQRCode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 		1EA10A491DF7ECF30012ABDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1EC525A51E1CC3A00028DA1F /* QYThermalSupport.h */,
+				1EC525A61E1CC3A00028DA1F /* QYThermalSupport.m */,
+				1EC525A81E1CEC3F0028DA1F /* MMQRCode.h */,
+				1EC525A91E1CEC3F0028DA1F /* MMQRCode.m */,
 				1E278A831E16413800448E67 /* SVProgressHUD */,
 				1EA10A4A1DF7ECF30012ABDA /* main.m */,
 				1E278A9D1E1786C400448E67 /* QYBluetoothManager.pch */,
@@ -232,6 +242,8 @@
 				1EA10A4E1DF7ECF30012ABDA /* AppDelegate.m in Sources */,
 				1EA10A631DF7ED000012ABDA /* QYBluetoothManager.m in Sources */,
 				1E278AA01E178C6800448E67 /* PrinterViewController.m in Sources */,
+				1EC525A71E1CC3A00028DA1F /* QYThermalSupport.m in Sources */,
+				1EC525AA1E1CEC3F0028DA1F /* MMQRCode.m in Sources */,
 				1E278A951E16413800448E67 /* SVProgressHUD.m in Sources */,
 				1E278A9C1E1650FE00448E67 /* QYPrinterManager.m in Sources */,
 				1E278A921E16413800448E67 /* SVIndefiniteAnimatedView.m in Sources */,
@@ -364,7 +376,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianye.QYBluetoothManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f07ca32-b8dd-4b5f-893e-0635e3495efe";
+				PROVISIONING_PROFILE = "27b85ef3-65bb-4888-aee4-5c63c578781c";
 				PROVISIONING_PROFILE_SPECIFIER = qianyeDemo;
 			};
 			name = Debug;

@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _titles = @[@"打印测试1", @"打印测试2", @"打印测试3"];
+    _titles = @[@"标签运单一体化", @"精简表格", @"80mm打印", @"位图打印测试"];
     _printerManager = [QYBluetoothManager shareBluetoothManager].peripheralManager.printerManager;
     [self mmInitViews];
 }
@@ -126,10 +126,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         [self printDemoOne];
+    } else if (indexPath.section == 1) {
+        [self printDemoTwo];
+    } else if (indexPath.section == 2) {
+        [self printDemoThree];
+    } else if (indexPath.section == 3) {
+        [self printDemoFour];
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10.0;
+}
+
 #pragma mark - Print
+
+#pragma mark printDemoOne
 
 - (void)printDemoOne {
     int x_end = 600;
@@ -139,6 +155,7 @@
     int text_padding = 6;
     
     // 初始化打印
+    [_printerManager printerManagerInitData];
     [_printerManager mPrintInitDataWidth:600 Height:y_end];
     int xCursor = 0;
     int yCursor = y_start;
@@ -242,6 +259,133 @@
     [_printerManager mPrintQRCode:NO x:400 y:140 content:@"http://www.baidu.com"];
     
     [_printerManager mPrintEnd];
+    [_printerManager printAllData];
+}
+
+#pragma mark printDemoTwo
+
+- (void)printDemoTwo {
+    [_printerManager printerManagerInitData];
+    [_printerManager printFroTemplateWithStrings:@[@"车满满", @"提货联"]
+                             atPositions:@[@(0),@(_printerManager.rateOfPtAndPage * (_printerManager.printPageWidth - 8))]
+                           withAlighType:@[@(QYPrinterAlignLeft),@(QYPrinterAlignRight)]
+                                fontSize:QYPrinterFontSizeNormal
+                                fontType:QYPrinterFontType24
+                                  isBold:YES];
+    [_printerManager printLineType:@"┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"];
+    [self printFroTemplateWithStrings:@[@"运单号：N10086", @"2017年01月04日"] isBold:NO];
+    [self printFroTemplateWithStrings:@[@"发货人：冯爷", @"电话：17086440327"] isBold:NO];
+    [_printerManager printLineType:@"┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"];
+    [self printFroTemplateWithStrings:@[@"收货人：斗哥", @"电话：15011263633"] isBold:NO];
+    [self printFroTemplateWithStrings:@[@"地址：诺安基金大厦"] isBold:NO];
+    [_printerManager printLineType:@"┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"];
+    [self printFroTemplateWithStrings:@[@"苹果7 100件", @"自提", @"回单100份"] isBold:NO];
+    [_printerManager printLineType:@"┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"];
+    [self printFroTemplateWithStrings:@[@"现付：1000元", @"到付：100元"] isBold:NO];
+    [self printFroTemplateWithStrings:@[@"代收货款：50元", @"报价声明：60元"] isBold:NO];
+    [_printerManager printLineType:@"┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"];
+    [self printFroTemplateWithStrings:@[@"发站：北京", @"到站：上海"] isBold:NO];
+    [self printFroTemplateWithStrings:@[@"备注：我买着吃的"] isBold:NO];
+    [_printerManager printLineType:@"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"];
+    [_printerManager printBarCode:@"1110321108" wihtHeight:50];
+//    [_printerManager printQRCode:@"http://www.baidu.com" width:80];
+    [_printerManager printAllData];
+}
+
+- (void)printFroTemplateWithStrings:(NSArray *)strings isBold:(BOOL)isBold {
+    NSInteger rightPosition = _printerManager.rateOfPtAndPage * (_printerManager.printPageWidth - 8) - 4;
+    NSArray *positions = @[];
+    NSArray *alighTypes = @[];
+    switch (strings.count) {
+        case 0:
+            positions = @[@(0), @(rightPosition)];
+            alighTypes = @[@(QYPrinterAlignLeft), @(QYPrinterAlignRight)];
+            break;
+        case 1:
+            positions = @[@(0), @(_printerManager.rateOfPtAndPage * 4), @(rightPosition)];
+            alighTypes = @[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft), @(QYPrinterAlignRight)];
+            break;
+        case 2:
+            positions = @[@(0), @(_printerManager.rateOfPtAndPage * 4), @(_printerManager.rateOfPtAndPage * (_printerManager.printPageWidth - 16)), @(rightPosition)];
+            alighTypes = @[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft), @(QYPrinterAlignRight), @(QYPrinterAlignRight)];
+            
+            break;
+        case 3:
+            positions = @[@(0), @(_printerManager.rateOfPtAndPage * 4), @(_printerManager.rateOfPtAndPage * 35), @(_printerManager.rateOfPtAndPage * (_printerManager.printPageWidth - 16)), @(rightPosition)];
+            alighTypes = @[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft), @(QYPrinterAlignCenter), @(QYPrinterAlignRight), @(QYPrinterAlignRight)];
+            break;
+        default:
+            break;
+    }
+    NSMutableArray *printArray = [NSMutableArray array];
+    [printArray addObject:@"┃"];
+    for (NSString *string in strings) {
+        [printArray addObject:string];
+    }
+    [printArray addObject:@"┃"];
+    [_printerManager printFroTemplateWithStrings:printArray
+                                     atPositions:positions
+                                   withAlighType:alighTypes
+                                        fontSize:QYPrinterFontSizeNormal
+                                        fontType:QYPrinterFontType24
+                                          isBold:isBold];
+}
+
+#pragma mark printDemoThree
+
+- (void)printDemoThree {
+    [_printerManager printerManagerInitData];
+    
+    [_printerManager printString:@"车满满" alignType:QYPrinterAlignCenter fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"------ 提货联 ------" alignType:QYPrinterAlignCenter fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printLineType:@"-----------------------------------------------"];
+    [_printerManager printString:@"运单号：N10086" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"货号：100" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"北京-湖北武汉" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"开单日期:2017年01月04日" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"会员号：10086" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    
+    [_printerManager printString:@"发货人：冯爷" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"电话：15011263633" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"发货地址：诺安基金大厦" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    
+    [_printerManager printString:@"收货人：斗哥" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"电话：15011263633" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"收货地址：诺安基金大厦" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    
+    [_printerManager printLineType:@"-----------------------------------------------"];
+    [_printerManager printString:@"货物名称：苹果7" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"件数：100" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printFroTemplateWithStrings:@[@"重量：15吨", @"体积：10立方米"] atPositions:@[@(0),@(45 * _printerManager.rateOfPtAndPage)] withAlighType:@[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft)] fontSize:QYPrinterFontSizeNormal fontType:QYPrinterFontType24 isBold:NO];
+    [_printerManager printFroTemplateWithStrings:@[@"回单：15份", @"送货方式：自提"] atPositions:@[@(0),@(45 * _printerManager.rateOfPtAndPage)] withAlighType:@[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft)] fontSize:QYPrinterFontSizeNormal fontType:QYPrinterFontType24 isBold:NO];
+    [_printerManager printString:@"包装：纸盒" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"运输方式：航空" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    
+    [_printerManager printLineType:@"-----------------------------------------------"];
+    [_printerManager printFroTemplateWithStrings:@[@"运费：", @"55元"] atPositions:@[@(0),@(45 * _printerManager.rateOfPtAndPage)] withAlighType:@[@(QYPrinterAlignLeft), @(QYPrinterAlignLeft)] fontSize:QYPrinterFontSizeNormal fontType:QYPrinterFontType24 isBold:NO];
+    [_printerManager printString:@"合计费用：￥100元" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"现付：12元" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"代收货款：￥0元" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"备注：我买来用来吃的" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType32 fontSize:QYPrinterFontSizeNormal isBold:YES];
+    [_printerManager printString:@"运输条款：姬收到了贵金属的离开刚好是大了\n看过你死定了卡号急死了都看好就挂上\n了看到过急死了都看过就" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+     [_printerManager printString:@"无锡市地址：光华路" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+     [_printerManager printString:@"联系电话：15011263633" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"北京市地址：光华路" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printString:@"联系电话：15011263633" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printLineType:@"-----------------------------------------------"];
+    [_printerManager printString:@"经办人签字：张章" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
+    [_printerManager printBarCode:@"1110321108" wihtHeight:50];
+    [_printerManager printQRCode:@"http://www.baidu.com" width:80];
+    [_printerManager cutPage];  // 打印切纸
+    [_printerManager printAllData];
+
+}
+
+#pragma mark printDemoFour
+
+- (void)printDemoFour {
+    [_printerManager printerManagerInitData];
+    [_printerManager printXprinterStandardTemplate];
     [_printerManager printAllData];
 }
 

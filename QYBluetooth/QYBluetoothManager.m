@@ -98,10 +98,12 @@ static QYBluetoothManager *bluetoothManager;
         case CBCentralManagerStatePoweredOn:
         {
             NSLog(@">>>CBCentralManagerStatePoweredOn");
-            CBUUID *zicoxKey = [CBUUID UUIDWithString:@"FFF0"];
-            CBUUID *xprinterKey = [CBUUID UUIDWithString:@"18F0"];
-            CBUUID *dpZt801Key = [CBUUID UUIDWithString:@"E7810A71-73AE-499D-8C15-FAA9AEF0C3F2"];
-            [_centralManager scanForPeripheralsWithServices:@[zicoxKey, xprinterKey, dpZt801Key] options:@{CBCentralManagerScanOptionAllowDuplicatesKey : @YES}];
+            NSMutableArray *services = [NSMutableArray array];
+            for (NSString *filterString in _filterServices) {
+                CBUUID *uuid = [CBUUID UUIDWithString:filterString];
+                [services addObject:uuid];
+            }
+            [_centralManager scanForPeripheralsWithServices:(services ? : nil) options:@{CBCentralManagerScanOptionAllowDuplicatesKey : @YES}];
         }
             break;
         default:

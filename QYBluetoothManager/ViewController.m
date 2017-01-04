@@ -28,6 +28,7 @@
     _peripherals = [NSMutableArray array];
     _bluetoothManager = [QYBluetoothManager shareBluetoothManager];
     _bluetoothManager.delegate = self;
+    _bluetoothManager.filterServices = @[@"FFF0", @"18F0", @"E7810A71-73AE-499D-8C15-FAA9AEF0C3F2"];
     [_bluetoothManager startScanPeripheral];
     [self mmInitViews];
 }

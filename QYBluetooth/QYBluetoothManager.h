@@ -33,6 +33,8 @@
 @property (nonatomic, strong) NSMutableArray *peripherals;
 
 @property (nonatomic, strong) NSMutableArray *peripheralsAD;
+// 筛选过滤指定服务的外设
+@property (nonatomic, strong) NSArray *filterServices;
 // 连接成功的外设管理对象
 @property (nonatomic, strong) QYPeripheralManager *peripheralManager;
 

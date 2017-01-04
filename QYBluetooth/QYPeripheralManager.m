@@ -58,7 +58,9 @@ static const NSInteger MAX_PRINT_STR_LENGTH = 150;
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable NSError *)error {
-    NSLog(@"%@", error.localizedDescription);
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
 }
 
 #pragma mark - QYPrinterManagerDelegate
