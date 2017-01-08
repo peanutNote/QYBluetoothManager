@@ -281,18 +281,6 @@ typedef NS_ENUM(NSInteger, QYOrderPrintSize) {
  */
 - (NSData *)cutPaperData;
 
-- (NSData *)tabCountData:(Byte)count;
-
-- (NSData *)getPrinterStatusData;
-
-- (NSData *)getPrinterHardwareVersionData;
-
-- (NSData *)getPrinterSoftwareVersionData;
-
-- (NSData *)setBaudRateData:(Byte)baudRate;
-
-- (NSData *)whitePrintData:(BOOL)enabled;
-
 #pragma mark 自定义打印指令
 
 /**
@@ -353,6 +341,8 @@ typedef NS_ENUM(NSInteger, QYOrderPrintSize) {
  *  位图打印测试，有待完善
  */
 - (void)printXprinterStandardTemplate;
+
+- (void)printTest;
 
 #pragma mark - 位图打印
 

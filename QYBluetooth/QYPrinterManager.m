@@ -227,36 +227,6 @@
     return [[NSData alloc] initWithBytes:bytes length:4];
 }
 
-- (NSData *)tabCountData:(Byte)count {
-    Byte bytes[] = {0x1B,0x44,count};
-    return [[NSData alloc] initWithBytes:bytes length:3];
-}
-
-- (NSData *)getPrinterStatusData {
-    Byte bytes[] = {0x1B,0x76};
-    return [[NSData alloc] initWithBytes:bytes length:2];
-}
-
-- (NSData *)getPrinterHardwareVersionData {
-    Byte bytes[] = {0x1B,0x2B};
-    return [[NSData alloc] initWithBytes:bytes length:2];
-}
-
-- (NSData *)getPrinterSoftwareVersionData {
-    Byte bytes[] = {0x1B,0x2C};
-    return [[NSData alloc] initWithBytes:bytes length:2];
-}
-
-- (NSData *)setBaudRateData:(Byte)baudRate {
-    Byte bytes[] = {0x1B,0x02,baudRate};
-    return [[NSData alloc] initWithBytes:bytes length:3];
-}
-
-- (NSData *)whitePrintData:(BOOL)enabled {
-    Byte bytes[] = {0x1D,0x42,enabled ? 0x01 : 0x00};
-    return [[NSData alloc] initWithBytes:bytes length:3];
-}
-
 #pragma mark 自定义打印指令
 
 - (void)printString:(NSString *)string
@@ -588,6 +558,11 @@
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return resultImage;
+}
+
+- (void)printTest {
+    [self addDataToBuffer:[self printerInitData]];
+    [self printString:@"jsjfsdklfjsldgjsldghsldgjsldkjblsdbnsladgnslkdfjlskdjf" alignType:QYPrinterAlignLeft fontType:QYPrinterFontType24 fontSize:QYPrinterFontSizeNormal isBold:NO];
 }
  
 @end

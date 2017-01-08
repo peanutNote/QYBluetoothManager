@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _titles = @[@"标签运单一体化", @"精简表格", @"80mm打印", @"位图打印测试"];
+    _titles = @[@"标签运单一体化", @"精简表格", @"80mm打印", @"位图打印测试", @"打印测试"];
     _printerManager = [QYBluetoothManager shareBluetoothManager].peripheralManager.printerManager;
     [self mmInitViews];
 }
@@ -132,6 +132,8 @@
         [self printDemoThree];
     } else if (indexPath.section == 3) {
         [self printDemoFour];
+    } else {
+        [self printTest];
     }
 }
 
@@ -386,6 +388,14 @@
 - (void)printDemoFour {
     [_printerManager printerManagerInitData];
     [_printerManager printXprinterStandardTemplate];
+    [_printerManager printAllData];
+}
+
+#pragma mark printTest
+
+- (void)printTest {
+    [_printerManager printerManagerInitData];
+    [_printerManager printTest];
     [_printerManager printAllData];
 }
 
